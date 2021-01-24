@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Masscancel -- HELP page</title>
+	<link href="../css/fontawesome/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/aioe.css">
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+        <div class="navbar-header">
+                <a href="/index.php"><i class="fas fa-home fa-3x"></i></a>
+		<a href="/masscancel.php"><i class="fas fa-sign-out-alt fa-3x"></i></a>
+        </div>
+  </div>
+</nav>
+
+<div class="help">
+	<div class="headerhelp">Manual page</div>
+	<div class="mainhelp">
+	<dl>
+		<dt>Message-ID</dt>
+		<dd>
+		    This line deletes the <b>single</b> USENET message identified by the <b>Message-ID</b> indicated in the first and only input field.
+		    The Message-ID must be entered complete with all its parts, including the at ('@'), the start ('&lt;') and end ('&gt') characters; 
+		    wildmats are not allowed.<br />
+		    Example: with first field set to &lt;r50rmn$p52$1@gioia.aioe.org&gt this line deletes the message identified by 
+		    Message-ID  &lt;r50rmn$p52$1@gioia.aioe.org&gt
+		</dd>
+		<dt>Range</dt>
+		<dd>
+		    This option deletes all messages sent to the <b>newsgroup</b> indicated by the first input field and still kept on the server that have a 
+		    progressive serial number between the <b>minimum value</b> indicated by the second input field and the <b>maximum</b> indicated 
+		    by the third. Numbers must be entered in decimal integer format and must be positive.<br />
+		    <b>Warning:</b> all messages with a serial number between the minimum (second input field) and the maximum (third field) are 
+		    deleted without exception.<br />
+		    Example: with first field set to local.test, second set to 1 and third to 999, this command cancels all messages sent to the newsgroup
+	            'local.test' that have got a serial number between 1 and 999.
+		</dd>
+
+		<dt>Thread</dt>
+		<dd>
+		    This command deletes the USENET message identified by the <b>Message-ID</b> indicated in the first and only input field as well as all
+		    the messages that reply to it. In other words, it deletes the message identified by the message-id entered in the input field 
+		    and all the messages that contain it within the argument of header References.<br />
+		    <b>Warning:</b> in the case of very long threads, some newsreader insert only the last three or four Message-IDs into the value 
+		    of the References header, therefore not all the messages belonging to a thread could be deleted using this command because in some 
+		    of them the Message-ID of the post that originated the thread may not be indicated.<br />
+		    Example: if &lt;r50rmn$p52$1@gioia.aioe.org&gt; is inserted in the first and only input field, the USENET message identified by &lt;r50rmn$p52$1@gioia.aioe.org&gt
+		    as Message-ID is deleted as well as all posts that includes &lt;r50rmn$p52$1@gioia.aioe.org&gt; inside the argument of References header
+		</dd>
+		<dt>Sender</dt>
+		<dd>
+		    This command deletes all messages posted by the same sender that sent the message identified by the <b>Message-ID</b> indicated in the 
+		    input field.<br />
+               	    <b>Warning:</b> this command deletes only the messages sent on the same group of the message whose message-id is inserted in the 
+		    input field and only if the content of the From header is perfectly equal. <br />
+		    Example: if &lt;r5nej6$irh$1@dont-email.me&gt; is inserted into the only input field, all messages sent to it.discussioni.auto by 
+	 	    'Hugo Stiglitz &lt;HugoStiglitz@giovannona.coscialunga.com&gt;' will be cancelled because that message was sent to this group by this
+		    author.
+		</dd>
+
+		<dt>Header</dt>
+		<dd>Inside the <b>group</b> set by the first input box, all messages whose <b>header</b> identified by the second field matches the <b>value</b> 
+		    shown by the third field are deleted. <br />
+		    Example: <i>local.test</i> (first field), <i>User-Agent</i> (second field), <i>Pan</i> (third field) will cancel all messages inside 
+		    local.test whose User-Agent header matches "Pan".<br />
+		    <b>Warning:</b> third field, <b>header value</b>, is <b>case sensitive</b> so <i>Pan</i> doesn't match <i>pan</i></dd>
+		<dt>Body</dt>
+	  	<dd>Delete all messages sent to the <b>group</b> shown by the first field that match the <b>regular expression</b> inserted in the second 
+		    field. Pattern is <b>case insensitive</b>.<br />
+		    <b>Warning:</b> this operation is expansive in terms of CPU time if the messages in the group are more than a few <b>thousands</b></dd>
+
+	</dl>
+
+	</div>
+
+
+</div>
+
+
+
+</body>
+</html>

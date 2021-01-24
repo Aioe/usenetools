@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+        <div class="navbar-header">
+                <a href="index.php"><i class="fas fa-home fa-3x"></i></a>
+		<a href="html/masshelp.html"><i class="fas fa-question fa-3x"></i></a>
+        </div>
+  </div>
+</nav>
+
+<table class="masscancel">
+<tr>
+<th class="massheader">Message-ID</th>
+<td class="massinputfield"><input type="text" name="messageid" class="longinput"></td>
+<td class="masssubmit">
+	<button type="submit" name="action" value="cancelbymessageid"><i class="fas fa-trash-alt fa-2x"></i></button>
+</td>
+</tr>
+<tr>
+<th class="massheader">Range</th>
+<td class="massinputfield">
+	<input type="text" name="rangegroup" class="largeinput">
+	<input type="text" name="rangestart" class="smallinput">
+	<input type="text" name="rangeend" class="smallinput">
+</td>
+<td class="masssubmit"><button type="submit" name="action" value="cancelbyrange"><i class="fas fa-trash-alt fa-2x"></i></button></td>
+</tr>
+<tr>
+<th class="massheader">Thread</th>
+<td class="massinputfield"><input type="text" name="threadid"  class="longinput"></td>
+<td class="masssubmit"><button type="submit" name="action" value="cancelbythread"><i class="fas fa-trash-alt fa-2x"></i></button></td>
+</tr>
+<tr>
+<th class="massheader">Sender</th>
+<td class="massinputfield"><input type="text" name="senderid"  class="longinput"></td>
+<td class="masssubmit"><button type="submit" name="action" value="cancelbysender"><i class="fas fa-trash-alt fa-2x"></i></button></td>
+</tr>
+<tr>
+<th class="massheader">Header</th>
+<td class="massinputfield">
+        <input type="text" name="headergroup" class="smallinput">
+        <input type="text" name="headername" class="smallinput">
+        <input type="text" name="headervalue" class="largeinput">
+</td>
+<td class="masssubmit"><button type="submit" name="action" value="cancelbyheader"><i class="fas fa-trash-alt fa-2x"></i></button></td>
+</tr>
+<tr>
+<th class="massheader">Body</th>
+<td class="massinputfield">
+        <input type="text" name="bodygroup" class="smallinput">
+	<input type="text" name="bodyvalue" class="largerinput">
+</td>
+<td class="masssubmit"><button type="submit" name="action" value="cancelbybody"><i class="fas fa-trash-alt fa-2x"></i></button></td>
+</tr>
+
+</table>
+
+
+
